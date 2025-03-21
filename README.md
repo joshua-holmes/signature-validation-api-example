@@ -21,10 +21,22 @@ This is a project to demonstrate a web service that proves ownership of a privat
 
 ### Instructions
 You will need 2 terminal emulator windows/tabs.
-1. In the first terminal, run `cargo run` to start the Rust API.
-2. In the second, run `./sign_and_verify.sh "My message here"`, which will create the keys, sign a message, and send a json payload to the Rust API for verification.
+1. In the first terminal, run this to start the Rust API.:
+```bash
+cargo run
+```
+2. In the second, run this which will create the keys, sign a message, and send a json payload to the Rust API for verification:
+```bash
+./sign_and_verify.sh "My message here"
+```
 
 You will see the results after. You can use whatever you like for the message. If you do something wrong when running the script, it will probably tell you.
+
+### Running Tests
+You can use the following command to run tests:
+```bash
+cargo test
+```
 
 ## How does it work?
 
