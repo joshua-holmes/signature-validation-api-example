@@ -49,10 +49,7 @@ mod tests {
     use super::*;
     use crate::types::{AppState, VerificationData, VerificationResult};
     use openssl::{pkey::PKey, rsa::Rsa, sign::Signer};
-    use std::{
-        assert_matches::assert_matches,
-        sync::Arc,
-    };
+    use std::{assert_matches::assert_matches, sync::Arc};
 
     /// Helper function to generate test keys and a valid signature
     fn generate_test_data(valid_signature: bool) -> VerificationData {
