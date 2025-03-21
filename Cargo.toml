@@ -10,3 +10,8 @@ openssl = "0.10.71"
 serde = { version = "1.0.219", features = ["derive"] }
 tokio = { version = "1.43.0", features = ["full"] }
 tower-http = { version = "0.6.2", features = ["cors"] }
+
+[dev-dependencies]
+hyper = "1.6.0"
+serde_json = "1.0.140"
+tower = "0.5.2"

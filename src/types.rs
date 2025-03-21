@@ -10,14 +10,14 @@ use std::{
 use openssl::pkey::{PKey, Public};
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct VerificationRequest {
     pub message: String,
     pub signature: String,
     pub public_key: String,
 }
 
-#[derive(Debug, Serialize)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct VerificationResponse {
     pub valid: bool,
     pub message: String,
