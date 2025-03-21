@@ -15,6 +15,7 @@ pub fn verify_signature(
 ) -> Result<VerificationResult, VerificationError> {
     // Check if nonce has previously been used
     if !app_state.insert_nonce(data.nonce.clone()).map_err(|e| {
+        // This would be a log to a logging service in a real project, e.g. datadog
         println!("Poisoned mutex when inserting nonce:\n{}", e);
         VerificationError::NonceMutextPoisoned
     })? {
@@ -23,6 +24,8 @@ pub fn verify_signature(
 
     // Setup verifier
     let mut verifier = Verifier::new(MessageDigest::sha256(), &data.public_key).map_err(|e| {
+        // We have different messages to the "logging service" than the client here. This is because the client doesn't
+        // need to know this level of detail, but we do.
         println!("Failed to create verifier:\n{}", e);
         VerificationError::OpenSslFailed
     })?;
