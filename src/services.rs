@@ -1,3 +1,5 @@
+//! Module that handles the business logic of the application. In a larger project, this would be split into submodules
+
 use std::sync::Arc;
 
 use openssl::{hash::MessageDigest, sign::Verifier};

@@ -1,3 +1,11 @@
+//! Module that handles receiving and sending requests. In a larger project, the structure would look more like:
+//! handlers
+//! ├-- mod.rs
+//! ├-- verify.rs
+//! ├-- another_namespace.rs
+//!
+//! Then `mod.rs` would hold the `build_router()` function that builds routes using handlers from the other submodules.
+
 use std::sync::Arc;
 
 use crate::{
