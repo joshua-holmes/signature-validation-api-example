@@ -1,11 +1,13 @@
 #!/bin/bash
 
+
 # Configuration
 PORT=3000
-PRIVATE_KEY="private.pem"
-PUBLIC_KEY="public.pem"
+DIR="$(dirname $(realpath $0))"  # always create keys in same dir as this script, regardless of PWD
+PRIVATE_KEY="${DIR}/private.pem"
+PUBLIC_KEY="${DIR}/public.pem"
 SERVER_URL="http://localhost:${PORT}/verify"
-DEPENDENCIES=("openssl" "curl" "jq")
+DEPENDENCIES=("openssl" "curl" "jq" "lsof")
 
 print_dependencies() {
     echo "The dependencies for this script are:"
