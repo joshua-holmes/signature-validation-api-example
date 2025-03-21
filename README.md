@@ -32,9 +32,9 @@ You will see the results after. You can use whatever you like for the message. I
 The Rust API listens for incoming requests on `localhost:3000` only (this is a demo, so [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS) is configured to only allow requests from `localhost`). It uses the following payload schema for requests:
 ```json
 {
-    message: <string>,
-    public_key: <string>,
-    signature: <string>
+    "message": <string>,
+    "public_key": <string>,
+    "signature": <string>
 }
 ```
 
