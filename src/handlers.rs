@@ -62,7 +62,7 @@ fn validate_and_transform(
     let Ok(public_key) = PKey::public_key_from_pem(payload.public_key.as_bytes()) else {
         return Err(RequestValidationError::InvalidPublicKey);
     };
-    let Ok(signature) = BASE64_STANDARD.decode(payload.signature) else {
+    let Ok(signature) = BASE64_STANDARD.decode(payload.signature.replace("\n", "")) else {
         return Err(RequestValidationError::FailedToDecodeSignature);
     };
     let verification_data = VerificationData {
