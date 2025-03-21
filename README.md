@@ -1,4 +1,4 @@
-# Signature Validation API Example
+# Signature Verification API Example
 
 Hi and thanks for finding my project 👋😀
 
