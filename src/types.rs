@@ -50,7 +50,7 @@ impl Display for VerificationResult {
     }
 }
 
-/// Represents a variety of errors that could occur during signature validation
+/// Represents a variety of errors that could occur during signature verification
 pub enum VerificationError {
     OpenSslFailed,
     NonceMutextPoisoned,
@@ -63,6 +63,26 @@ impl Display for VerificationError {
             match self {
                 VerificationError::NonceMutextPoisoned => "Nonce mutext poisoned",
                 VerificationError::OpenSslFailed => "OpenSSL failed",
+            }
+        )
+    }
+}
+
+/// Represents a variety of errors that could occur during request validation
+pub enum RequestValidationError {
+    InvalidPublicKey,
+    InvalidMessageFormat,
+    FailedToDecodeSignature,
+}
+impl Display for RequestValidationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "{}",
+            match self {
+                RequestValidationError::InvalidPublicKey => "Invalid public key",
+                RequestValidationError::InvalidMessageFormat => "Invalid message format",
+                RequestValidationError::FailedToDecodeSignature => "Failed to decode signature",
             }
         )
     }
