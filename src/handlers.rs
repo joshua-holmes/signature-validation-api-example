@@ -40,7 +40,7 @@ async fn verify_signature(
         }
     };
 
-    let result = services::verify_signature(app_state, verification_data);
+    let result = services::verify_signature(app_state, &verification_data);
 
     let valid = matches!(result, Ok(VerificationResult::SignatureValid));
     let (status_code, message) = match result {

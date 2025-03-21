@@ -1,3 +1,5 @@
+#![feature(assert_matches)]
+
 use std::sync::Arc;
 
 use axum::http::HeaderValue;

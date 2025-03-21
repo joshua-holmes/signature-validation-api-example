@@ -31,6 +31,7 @@ pub struct VerificationData {
 }
 
 /// Indicates verification process is complete and what the result is
+#[derive(Debug)]
 pub enum VerificationResult {
     SignatureValid,
     SignatureInvalid,
@@ -51,6 +52,7 @@ impl Display for VerificationResult {
 }
 
 /// Represents a variety of errors that could occur during signature verification
+#[derive(Debug)]
 pub enum VerificationError {
     OpenSslFailed,
     NonceMutextPoisoned,
